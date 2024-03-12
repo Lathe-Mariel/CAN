@@ -1,4 +1,4 @@
-23121539204678048
+23123249379297091
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94717,8 +94717,15 @@ Connector
 2
 2
 footprints
+SM24CANB02HTG
+SOT23-3_2023
+TVS Diode (Bi-directional)
+0
+3
+3
+footprints
 SOIC127P600X175-8N
-SOT96-1
+SO8(1.75)
 Integrated Circuit
 0
 8
