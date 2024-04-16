@@ -6,7 +6,7 @@ RJ45を2個搭載できるようになっているので，数珠つなぎにで
 ESP32_DevKitCの全ピンが引き出されており，重ねる基板を作りやすくなっています．  
 
 
-![](board.png)
+![](board.jpg)
 
 
 # BoM
@@ -39,5 +39,5 @@ J6 | ピンヘッダ 1x2 | 拡張用ピンヘッダ（OPTION） | 1 |
 
 
 # 使用例
-![](check.png)
-![](tandem.png)
+![](check.jpg)
+![](tandem.jpg)
