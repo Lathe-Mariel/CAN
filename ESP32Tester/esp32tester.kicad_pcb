@@ -2029,7 +2029,7 @@
 		(descr "SOT23-3_2023")
 		(tags "TVS Diode (Bi-directional)")
 		(property "Reference" "D1"
-			(at 0.254 -3.302 270)
+			(at 0.254 -3.302 -90)
 			(layer "F.SilkS")
 			(uuid "1e490369-21e0-4b8f-a8f6-8aa93920529f")
 			(effects
@@ -3172,7 +3172,7 @@
 		(descr "Through hole straight pin header, 1x19, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x19 2.54mm single row")
 		(property "Reference" "REF**"
-			(at 0 -2.33 270)
+			(at 0 -2.33 -90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "46fe90bd-c1ff-4e19-b2d1-b4d22aa8cea0")
@@ -3184,7 +3184,7 @@
 			)
 		)
 		(property "Value" "PinHeader_1x19_P2.54mm_Vertical"
-			(at 0 48.05 270)
+			(at 0 48.05 -90)
 			(layer "F.Fab")
 			(uuid "02a4462b-dda3-46d0-b1eb-50884ae0dfa8")
 			(effects
@@ -3382,7 +3382,7 @@
 			(uuid "7278360f-9546-4ad6-81ee-144cc6ba1a35")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 22.86 360)
+			(at 0 22.86 0)
 			(layer "F.Fab")
 			(uuid "e2b280dd-45d3-44c5-bcc5-a5c6e88fef41")
 			(effects
@@ -4918,7 +4918,7 @@
 		(descr "Through hole straight pin header, 1x19, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x19 2.54mm single row")
 		(property "Reference" "REF**"
-			(at 0 -2.33 270)
+			(at 0 -2.33 -90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "59bbd6a9-e3f4-4f25-9ec0-84b09b67a99f")
@@ -4930,7 +4930,7 @@
 			)
 		)
 		(property "Value" "PinHeader_1x19_P2.54mm_Vertical"
-			(at 0 48.05 270)
+			(at 0 48.05 -90)
 			(layer "F.Fab")
 			(uuid "da2e4f60-4eeb-4216-8602-64947a05de80")
 			(effects
@@ -5128,7 +5128,7 @@
 			(uuid "69751d96-1ef1-4188-bc25-6d418b8f42ea")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 22.86 360)
+			(at 0 22.86 0)
 			(layer "F.Fab")
 			(uuid "8efb01ed-7117-4c4a-9b64-a35b4019e64c")
 			(effects
@@ -7163,7 +7163,7 @@
 		)
 	)
 	(gr_text "CAN H"
-		(at 52.578 88.392 0)
+		(at 52.832 89.408 0)
 		(layer "B.SilkS")
 		(uuid "94eac624-8ebb-4503-8886-78a8e84d3e90")
 		(effects
@@ -7198,10 +7198,10 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "VP/GPIO36"
-		(at 88.91016 109.7534 90)
+	(gr_text "GPIO34"
+		(at 93.99016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "00acf2a0-7158-4d1e-96b0-744b3605b1b7")
+		(uuid "03ac1261-7da1-4d7f-8247-b68444816ffd")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7210,22 +7210,34 @@
 			(justify left)
 		)
 	)
-	(gr_text "GND"
-		(at 83.83016 86.8934 90)
+	(gr_text "CLK"
+		(at 129.55016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "02642d9d-d93a-4773-9560-209a99f01f8d")
+		(uuid "07dcc3dd-9042-4eae-a308-97095eea036b")
 		(effects
 			(font
-				(size 1 1)
+				(size 0.7 0.7)
 				(thickness 0.15)
 			)
 			(justify right)
 		)
 	)
+	(gr_text "GPIO27"
+		(at 109.23016 109.7534 90)
+		(layer "F.SilkS")
+		(uuid "0b95b36e-dde9-4867-a3ad-47f797d1b1f2")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
 	(gr_text "GPIO33"
 		(at 101.61016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "03ea60d5-6902-4e8a-b4c7-8307ed434be1")
+		(uuid "0f2803b7-fa75-4afd-b25b-df7ba2e057c7")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7237,67 +7249,7 @@
 	(gr_text "GPIO19"
 		(at 101.61016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "0fd33a78-ecd5-4215-b7c3-9deefaeddc12")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "CLK"
-		(at 129.55016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "13592a13-58e1-46d0-840c-956bcd58c200")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "GPIO18"
-		(at 104.15016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "21dc15de-9718-4f3b-876d-ee1e48507cd5")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "CMD"
-		(at 127.01016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "264f74e2-7034-4f29-a936-d700ccb926e1")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
-	(gr_text "GPIO27"
-		(at 109.23016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "2bce194a-89c0-4147-b3ac-a9eed80fbf81")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
-	(gr_text "GPIO2"
-		(at 119.39016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "3bcb3797-1ca4-4a9c-9dcb-44b03e898ed6")
+		(uuid "15be317e-1179-437a-9848-4211b2c8276f")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7309,7 +7261,43 @@
 	(gr_text "GPIO1/U0TXD"
 		(at 91.45016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "40b18ac7-0bb4-46a6-b6d5-64a161c92408")
+		(uuid "1e6a0efe-5a36-4a05-89e6-263bbf28211b")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
+		)
+	)
+	(gr_text "GPIO15/MTDO"
+		(at 121.93016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "1fb0b56e-8125-4dd2-a718-67485e6f35df")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
+		)
+	)
+	(gr_text "GPIO16"
+		(at 111.77016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "214685e2-4e63-49a6-b889-960f35fc2d58")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
+		)
+	)
+	(gr_text "D0"
+		(at 127.01016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "22bcd61e-97f9-4853-a307-3848c62d47a9")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7321,13 +7309,37 @@
 	(gr_text "GPIO12/MTDI"
 		(at 114.31016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "445987ad-1061-4a92-9d1f-8509e1602733")
+		(uuid "29607c1d-b877-493e-aeb4-503ad96ee532")
 		(effects
 			(font
 				(size 0.7 0.7)
 				(thickness 0.15)
 			)
 			(justify left)
+		)
+	)
+	(gr_text "VP/GPIO36"
+		(at 88.91016 109.7534 90)
+		(layer "F.SilkS")
+		(uuid "2bfb6c27-69f4-40eb-b08c-1e6bbbcf5bfb")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "GPIO2"
+		(at 119.39016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "31718959-31a8-47be-bc4b-df02890b1f6a")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
 		)
 	)
 	(gr_text "IO16"
@@ -7345,7 +7357,7 @@
 	(gr_text "GPIO17"
 		(at 109.23016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "49b746cf-7b1c-4119-908d-ed726e0e2455")
+		(uuid "472ee9bc-e092-4cf0-9d30-4357ac39b800")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7354,16 +7366,28 @@
 			(justify right)
 		)
 	)
-	(gr_text "D0"
-		(at 127.01016 86.8934 90)
+	(gr_text "GPIO32"
+		(at 99.07016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "4bae353e-32c3-4e29-869b-ed3674f5e679")
+		(uuid "48ed1808-b6c5-41b9-b955-f93bf3195e5f")
 		(effects
 			(font
 				(size 0.7 0.7)
 				(thickness 0.15)
 			)
-			(justify right)
+			(justify left)
+		)
+	)
+	(gr_text "5V"
+		(at 129.667 109.75708 90)
+		(layer "F.SilkS")
+		(uuid "49a98592-ed1d-408e-b3e8-3d3e6cbf4b1c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left)
 		)
 	)
 	(gr_text "J1-1"
@@ -7378,10 +7402,34 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "GPIO5"
-		(at 106.69016 86.8934 90)
+	(gr_text "VN/GPIO39"
+		(at 91.45016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "67070c53-f1de-4832-a474-672906cee0ff")
+		(uuid "5408b6b2-d1b9-40e7-8e7f-2661055b9ccf")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "GPIO26"
+		(at 106.69016 109.7534 90)
+		(layer "F.SilkS")
+		(uuid "58d4a370-4705-499e-900b-86e6aff27326")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "GPIO0"
+		(at 116.85016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "5ad9103b-a362-41b7-9c71-cd38e8348a2f")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7390,46 +7438,22 @@
 			(justify right)
 		)
 	)
-	(gr_text "GPIO23"
-		(at 86.37016 86.8934 90)
+	(gr_text "GND"
+		(at 116.85016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "68ed1a9d-b102-477f-af31-1c65746e5174")
+		(uuid "81532512-21d9-46cd-8179-d60b9814eaef")
 		(effects
 			(font
-				(size 0.7 0.7)
+				(size 1 1)
 				(thickness 0.15)
 			)
-			(justify right)
+			(justify left)
 		)
 	)
-	(gr_text "GPIO22"
-		(at 88.91016 86.8934 90)
+	(gr_text "D2"
+		(at 121.93016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "712178f7-3e0d-44a4-93a3-70c7f0c82308")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "GPIO16"
-		(at 111.77016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "719f30fd-11b5-402f-ba61-a24cfd8685bb")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "GPIO13/MTCK"
-		(at 119.39016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "72c00e29-720f-4141-b67d-fcd7ef784a13")
+		(uuid "833d7a5b-6774-43aa-86c0-96b11cecf253")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7439,69 +7463,21 @@
 		)
 	)
 	(gr_text "GND"
-		(at 116.85016 109.7534 90)
+		(at 83.83016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "7d90d534-2993-4c6e-95dd-d3fd4083e595")
+		(uuid "9a9020fc-c8dd-40c2-b2c8-11eec9faf4f9")
 		(effects
 			(font
 				(size 1 1)
 				(thickness 0.15)
 			)
-			(justify left)
-		)
-	)
-	(gr_text "3V3"
-		(at 83.83016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "7e8ad5a8-e03c-4a2b-8cd5-0baa3fa0a345")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
-	(gr_text "GPIO25"
-		(at 104.15016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "83923fba-0293-47b0-be25-02e47b945ac9")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
-	(gr_text "GPIO15/MTDO"
-		(at 121.93016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "8e862b18-df7b-4df4-9567-ca7aa6c721bb")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
 			(justify right)
 		)
 	)
-	(gr_text "GPIO4"
-		(at 114.31016 86.8934 90)
+	(gr_text "GPIO23"
+		(at 86.37016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "9d514910-130b-447a-9499-34c4a5af5eb1")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
-	(gr_text "D1"
-		(at 124.47016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "a183244a-3bfd-4337-8945-20cefd3e46ca")
+		(uuid "a0e7a67b-6d67-42e8-9543-afbc8ed8ed8e")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7513,7 +7489,7 @@
 	(gr_text "GPIO3/U0RXD"
 		(at 93.99016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "a234e2ac-89d6-4a78-9072-f4c39b74302f")
+		(uuid "a29ca932-b549-43ba-b36e-accc34567379")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7522,10 +7498,10 @@
 			(justify right)
 		)
 	)
-	(gr_text "GPIO34"
-		(at 93.99016 109.7534 90)
+	(gr_text "GPIO14/MTMS"
+		(at 111.77016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "a27bfbc3-74eb-42c3-984d-da46ca6d277a")
+		(uuid "a6a47602-d483-4539-b479-18e17c98f499")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7534,28 +7510,52 @@
 			(justify left)
 		)
 	)
-	(gr_text "EN/RESET"
-		(at 86.36744 102.13708 90)
+	(gr_text "D3"
+		(at 124.47016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "ba16bceb-5323-4ab1-9f33-1edfa27a25bc")
+		(uuid "b240c58e-5fa8-402f-9582-2e0fdddb6641")
 		(effects
 			(font
-				(size 1 1)
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "GPIO22"
+		(at 88.91016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "b44d115c-9dfa-4754-bf89-3c8fb79fd2ae")
+		(effects
+			(font
+				(size 0.7 0.7)
 				(thickness 0.15)
 			)
 			(justify right)
 		)
 	)
-	(gr_text "GPIO26"
-		(at 106.69016 109.7534 90)
+	(gr_text "GPIO21"
+		(at 96.53016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "bbd7d94f-c4af-4cc9-8bc1-9a19d3ee095a")
+		(uuid "b9975490-6d75-429d-a58a-0411207a4e16")
 		(effects
 			(font
 				(size 0.7 0.7)
 				(thickness 0.15)
 			)
-			(justify left)
+			(justify right)
+		)
+	)
+	(gr_text "GPIO5"
+		(at 106.69016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "bd394849-8561-4d64-892a-21bfe7113288")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
 		)
 	)
 	(gr_text "5V"
@@ -7582,18 +7582,6 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "GPIO35"
-		(at 96.53016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "bfff832b-15de-4d55-8119-996e98775da2")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
 	(gr_text "GND"
 		(at 76.2 87.757 0)
 		(layer "F.SilkS")
@@ -7606,10 +7594,46 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "GPIO21"
-		(at 96.53016 86.8934 90)
+	(gr_text "3V3"
+		(at 83.83016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "d3db6cf2-ef56-4442-8956-b26427765175")
+		(uuid "c9718da3-01eb-47b3-bb9b-6b65851abbb6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "EN/RESET"
+		(at 86.36744 102.13708 90)
+		(layer "F.SilkS")
+		(uuid "cb50bc5b-0d24-4719-8e58-9107c7d2d212")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify right)
+		)
+	)
+	(gr_text "GPIO25"
+		(at 104.15016 109.7534 90)
+		(layer "F.SilkS")
+		(uuid "cd936086-f864-462e-a99b-f14500f8bd93")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "GPIO4"
+		(at 114.31016 86.8934 90)
+		(layer "F.SilkS")
+		(uuid "ce5edf2f-35c8-40bc-9215-6a8928645850")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7618,10 +7642,10 @@
 			(justify right)
 		)
 	)
-	(gr_text "D3"
-		(at 124.47016 109.7534 90)
+	(gr_text "GPIO13/MTCK"
+		(at 119.39016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "d6a81b8c-efc7-4ede-9df5-e19ee80ccc30")
+		(uuid "d0744be3-249d-46ed-9168-642b968d00ff")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7630,40 +7654,16 @@
 			(justify left)
 		)
 	)
-	(gr_text "GPIO14/MTMS"
-		(at 111.77016 109.7534 90)
+	(gr_text "GPIO18"
+		(at 104.15016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "dcec1571-02aa-493f-8689-89928f29817a")
+		(uuid "d61c9c34-d1fd-4226-88d6-6da7174bb5c3")
 		(effects
 			(font
 				(size 0.7 0.7)
 				(thickness 0.15)
 			)
-			(justify left)
-		)
-	)
-	(gr_text "GPIO32"
-		(at 99.07016 109.7534 90)
-		(layer "F.SilkS")
-		(uuid "dde98540-93e3-4e4b-a7d5-06a2ef6ef223")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify left)
-		)
-	)
-	(gr_text "5V"
-		(at 129.667 109.75708 90)
-		(layer "F.SilkS")
-		(uuid "e1a1e9dc-bf6e-4dbb-b6da-ab55de1e8bfc")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left)
+			(justify right)
 		)
 	)
 	(gr_text "IO17"
@@ -7678,10 +7678,10 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "D2"
-		(at 121.93016 109.7534 90)
+	(gr_text "CMD"
+		(at 127.01016 109.7534 90)
 		(layer "F.SilkS")
-		(uuid "f3446803-0f0c-4edb-ad9f-5558820dab7d")
+		(uuid "e2c44e29-6823-4079-bc72-f5cbbe1cde51")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -7690,22 +7690,10 @@
 			(justify left)
 		)
 	)
-	(gr_text "GPIO0"
-		(at 116.85016 86.8934 90)
-		(layer "F.SilkS")
-		(uuid "f903e67f-96ec-4048-9b0b-3765fca2d0ec")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.15)
-			)
-			(justify right)
-		)
-	)
 	(gr_text "GND"
 		(at 99.07016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "f9e8ecd1-0eac-4535-9d98-2fe499cf4a08")
+		(uuid "e6245d40-b3c2-41a1-86f0-7ea668ec9c9b")
 		(effects
 			(font
 				(size 1 1)
@@ -7714,10 +7702,22 @@
 			(justify right)
 		)
 	)
-	(gr_text "VN/GPIO39"
-		(at 91.45016 109.7534 90)
+	(gr_text "D1"
+		(at 124.47016 86.8934 90)
 		(layer "F.SilkS")
-		(uuid "fe00b43a-6fcf-4934-ba69-1323c1f94cad")
+		(uuid "f5f8d281-4f95-496b-b8c7-75eaefdf937e")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.15)
+			)
+			(justify right)
+		)
+	)
+	(gr_text "GPIO35"
+		(at 96.53016 109.7534 90)
+		(layer "F.SilkS")
+		(uuid "fd0b8f7e-359a-4111-8f38-9c83e194d518")
 		(effects
 			(font
 				(size 0.7 0.7)
