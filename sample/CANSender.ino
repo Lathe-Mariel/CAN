@@ -37,7 +37,7 @@ void loop() {
   CAN.beginPacket(0x3e9);
   CAN.write(car_speed *128 / 256);  // [rpm]に合わせるためにｘ１２８
   CAN.write(car_speed *128 % 256);
-  CAN.write(0);  //実回転数の 1/256
+  CAN.write(0);
   CAN.write(0);
   CAN.write(0);
   CAN.write(0);
@@ -51,6 +51,7 @@ void loop() {
   engine_rev %= 7000;
   if(engine_rev < 2000)
     engine_rev = 2000;
+  
   car_speed += 2;
   car_speed %= 240;
   delay(30);
