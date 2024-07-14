@@ -53,7 +53,7 @@ void loop() {
     engine_rev = 2000;
   
   car_speed += 2;
-  car_speed %= 240;
+  car_speed %= 180;
   delay(30);
 
 
