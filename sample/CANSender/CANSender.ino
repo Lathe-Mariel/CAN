@@ -34,6 +34,8 @@ void loop() {
   CAN.write(0);
   CAN.endPacket();
 
+  delay(30);
+  
   CAN.beginPacket(0x3e9);
   CAN.write(car_speed *128 / 256);  // [rpm]に合わせるためにｘ１２８
   CAN.write(car_speed *128 % 256);
@@ -54,8 +56,6 @@ void loop() {
   
   car_speed += 2;
   car_speed %= 180;
-  delay(30);
-
 
   Serial.println("done");
   delay(30);
