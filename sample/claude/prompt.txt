@@ -1,0 +1,363 @@
+USB-CANアダプタ仕様書
+
+# 1. 概要
+## 1.1 目的
+
+本装置はPCとCANバスを接続するUSB-CANアダプタである。
+USB経由でPCと接続し、CANフレームの送受信およびCANネットワークの監視を行う。
+
+## 1.2 特徴
+ESP32採用
+ESP-IDFベース実装
+ESP32内蔵TWAIコントローラ使用
+SLCANプロトコル対応
+CAN 2.0A/2.0B対応
+Listen Onlyモード対応
+NVS設定保存対応
+
+# 2. システム構成
+## 2.1 ブロック図
++----------------+
+|       PC       |
+|                |
+| SocketCAN      |
+| can-utils      |
+| SavvyCAN       |
++--------+-------+
+         |
+      USB-C
+         |
++--------v-------+
+|    CP2102N     |
+| USB-UART Bridge|
++--------+-------+
+         |
+       UART
+         |
++--------v-------+
+|     ESP32      |
+|                |
+|  SLCAN Engine  |
+|  TWAI Driver   |
++--------+-------+
+         |
+      TWAI
+         |
++--------v-------+
+|    TJA1051     |
+| CAN Driver     |
++--------+-------+
+         |
+   CAN_H / CAN_L
+
+# 3. ハードウェア仕様
+## 3.1 マイコン
+ESP32-WROOM-32
+
+## 3.2 USBインタフェース
+### USB-UART変換IC
+CP2102N
+
+### UART設定
+921600bps
+8N1
+フロー制御なし
+
+## 3.3 CANインタフェース
+### CANコントローラ
+ESP32内蔵TWAI
+
+### CANトランシーバ
+TJA1051T
+
+### GPIO割り当て
+TWAI_TX : GPIO5
+TWAI_RX : GPIO4
+
+## 3.4 LEDインタフェース
+### GPIO割り当て
+ERR LED : GPIO2
+RX LED  : GPIO16
+TX LED  : GPIO17
+
+### LED極性
+Active High
+
+# 4. GPIO一覧
+GPIO2   : ERR LED
+GPIO4   : TWAI_RX
+GPIO5   : TWAI_TX
+GPIO16  : RX LED
+GPIO17  : TX LED
+
+
+その他GPIOは未使用とする。
+
+# 5. CAN通信仕様
+## 5.1 対応規格
+### 対応
+CAN 2.0A
+CAN 2.0B
+
+### 非対応
+CAN FD
+LIN
+
+## 5.2 ボーレート
+コマンド	速度S0	10kbps
+S1	20kbps
+S2	50kbps
+S3	100kbps
+S4	125kbps
+S5	250kbps
+S6	500kbps
+S7	800kbps
+S8	1Mbps
+
+## 5.3 対応フレーム
+### Standard Frame
+11-bit ID
+
+### Extended Frame
+29-bit ID
+
+### DLC
+0～8Byte
+
+# 6. CAN動作モード
+## 6.1 Closed Mode
+
+TWAI停止状態。
+
+### 機能
+送信不可
+受信不可
+
+## 6.2 Normal Mode
+
+通常通信モード。
+
+### ESP-IDF設定
+TWAI_MODE_NORMAL
+
+### 機能
+CAN送信
+CAN受信
+ACK送信
+エラー処理
+
+### 用途
+ECU開発
+通信試験
+制御機器接続
+
+## 6.3 Listen Only Mode
+
+受信専用モード。
+
+### ESP-IDF設定
+TWAI_MODE_LISTEN_ONLY
+
+### 機能
+CAN受信
+ACK送信禁止
+CAN送信禁止
+エラーフレーム送信禁止
+
+### 用途
+CAN解析
+CANロガー
+車両診断
+バス監視
+
+### 保証事項
+Listen OnlyモードではCANネットワークに影響を与えない。
+
+## 6.4 モード遷移
+           +---------+
+           | Closed  |
+           +----+----+
+                |
+         O      |      L
+                |
+      +---------+---------+
+      |                   |
++-----v------+     +------v------+
+|  Normal    |     | ListenOnly  |
++-----+------+     +------+------+
+      |                   |
+      +---------+---------+
+                |
+                C
+                |
+           +----v----+
+           | Closed  |
+           +---------+
+
+# 7. 通信プロトコル
+## 7.1 プロトコル
+SLCAN互換
+
+## 7.2 コマンド一覧
+### Normalモード開始
+O
+
+### Listen Onlyモード開始
+L
+
+### CAN停止
+C
+
+### ビットレート設定
+Sx
+
+### 標準フレーム送信
+tiiiLDD...
+
+
+例
+
+t1238AABBCCDDEEFF1122
+
+### 拡張フレーム送信
+TiiiiiiiiLDD...
+
+### Version取得
+V
+
+
+応答例
+
+V0100
+
+# 8. ソフトウェアアーキテクチャ
+## 8.1 開発環境
+ESP-IDF v5.x
+FreeRTOS
+C言語
+
+# 8.2 タスク構成
+## uart_rx_task
+
+### 機能
+
+UART受信
+SLCANコマンド解析
+
+## uart_tx_task
+
+### 機能
+UART送信
+
+## can_rx_task
+
+### 機能
+TWAI受信
+SLCAN変換
+
+## can_tx_task
+### 機能
+SLCAN解析
+TWAI送信
+
+## led_task
+### 機能
+LED状態管理
+
+## config_task
+### 機能
+NVS設定管理
+
+# 9. TWAI構成
+## 動作モード
+TWAI_MODE_NORMAL
+TWAI_MODE_LISTEN_ONLY
+
+## フィルタ
+
+全受信とする。
+
+TWAI_FILTER_CONFIG_ACCEPT_ALL()
+
+## 推奨キュー長
+TX Queue : 64
+RX Queue : 256
+
+## 有効アラート
+TWAI_ALERT_RX_DATA
+TWAI_ALERT_TX_SUCCESS
+TWAI_ALERT_ERR_PASS
+TWAI_ALERT_BUS_OFF
+
+# 10. キューおよびバッファ
+## CAN送信キュー
+64フレーム
+
+## CAN受信キュー
+256フレーム
+
+## UART受信バッファ
+1024 Byte
+
+## UART送信バッファ
+4096 Byte
+
+# 11. 設定保存
+##　保存方式
+ESP-IDF NVS
+
+## 保存項目
+CAN速度 10kbps～1Mbps
+
+## CANモード
+Normal
+Listen Only
+
+## 自動起動
+Enable / Disable
+
+## シリアル番号
+ASCII文字列
+
+12. LED仕様
+
+## RX LED（GPIO16）
+状態 | 動作
+---|---
+CAN受信 | 100ms点灯
+
+## TX LED（GPIO17）
+状態 | 動作
+---|---
+CAN送信 | 100ms点灯
+
+Listen Onlyモードでは消灯する。
+
+## ERR LED（GPIO2）
+状態 | 動作
+---|---
+正常 | 消灯
+Error Warning | 1Hz点滅
+Error Passive | 4Hz点滅
+Bus Off | 点灯
+
+# 13. エラー処理
+## Error Warning
+
+ERR LED 1Hz点滅
+
+## Error Passive
+
+ERR LED 4Hz点滅
+
+## Bus Off
+ERR LED点灯
+CAN停止
+
+## CAN受信オーバーフロー
+フレーム破棄
+エラーログ記録
+
+## UARTオーバーフロー
+入力データ破棄
+再同期処理実施
