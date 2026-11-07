@@ -1,0 +1,8 @@
+Command: cmake -G Ninja -B H:\git\CAN\sample\claude\usb_can_slcan\usb_can_slcan\main\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True H:\git\CAN\sample\claude\usb_can_slcan\usb_can_slcan\main
+-- The C compiler identification is Clang 21.1.3
+-- The CXX compiler identification is Clang 21.1.3
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/bin/clang.exe
+-- Check for working C compiler: C:/Espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/bin/clang.exe - broken
+-- Configuring incomplete, errors occurred!

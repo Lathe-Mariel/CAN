@@ -1,0 +1,48 @@
+Command: ninja flash
+[1/5] C:\Windows\system32\cmd.exe /C "cd /D H:\git\CAN\sample\claude\usb_can_slcan\usb_can_slcan\build && C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe C:/esp/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app H:/git/CAN/sample/claude/usb_can_slcan/usb_can_slcan/build/partition_table/partition-table.bin H:/git/CAN/sample/claude/usb_can_slcan/usb_can_slcan/build/usb_can_slcan.bin"
+usb_can_slcan.bin binary size 0x33500 bytes. Smallest app partition is 0x100000 bytes. 0xccb00 bytes (80%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D H:\git\CAN\sample\claude\usb_can_slcan\usb_can_slcan\build\bootloader && C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe C:/esp/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 H:/git/CAN/sample/claude/usb_can_slcan/usb_can_slcan/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6640 bytes. 0x9c0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32 -p COM27 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 2MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 usb_can_slcan.bin --diff-with bootloader/bootloader_flashed.bin partition_table/partition-table_flashed.bin usb_can_slcan_flashed.bin
+esptool v5.6.0
+Serial port COM27:
+Connecting.....
+Connected to ESP32 on COM27:
+Chip type:          ESP32-D0WDQ6 (revision v1.0)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                cc:50:e3:a8:07:24
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+SHA digest in image updated.
+No changed sectors found, verifying if data is in flash...
+'bootloader/bootloader.bin' at 0x00001000 verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+No changed sectors found, verifying if data is in flash...
+'partition_table/partition-table.bin' at 0x00008000 verified.
+
+Writing 'usb_can_slcan.bin' at 0x00010000...
+No changed sectors found, verifying if data is in flash...
+NOTE: Data not found in flash, flashing the whole image...
+Flash will be erased from 0x00010000 to 0x00043fff...
+Compressed 210176 bytes to 122135...
+Writing at 0x0001b9f4 ---- -------------------------  13.4% 16.00kB/119.27kB [0s] Writing at 0x00022d7e -------- ---------------------  26.8% 32.00kB/119.27kB [0s] Writing at 0x000285cb ------------ -----------------  40.2% 48.00kB/119.27kB [1s] Writing at 0x0002e523 ---------------- -------------  53.7% 64.00kB/119.27kB [1s] Writing at 0x000343bd -------------------- ---------  67.1% 80.00kB/119.27kB [2s] Writing at 0x0003a311 ------------------------ -----  80.5% 96.00kB/119.27kB [2s] Writing at 0x000406ee ---------------------------- -  93.9% 112.00kB/119.27kB [2s] Writing at 0x00043500 ------------------------------ 100.0% 119.27kB/119.27kB [3s] 
+Wrote 210176 bytes (122135 compressed) at 0x00010000 in 3.1 seconds (539.7 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...

@@ -1,0 +1,40 @@
+﻿python.exe : Your environment is not configured to handle Unicode characters.
+発生場所 C:\Espressif\tools\Microsoft.v6.1.PowerShell_profile.ps1:137 文字:5
++     & "C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe" "C:\es ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Your environmen...ode characters.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Recommended fix (persistent):
+ - Enable "Beta: Use Unicode UTF-8 for worldwide language support" in Windows language/region settings.
+
+If you still see issues or this warning persists, you can also try one of these workarounds:
+ - Run "chcp 65001" in the current console before running idf.py.
+ - Set PYTHONUTF8=1 before running idf.py (or set it globally).
+
+Note: "chcp 65001" must be run in each new console session unless your console/profile is configured to apply it automa
+tically.
+[1/6] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D H:\git\CAN\sample\claude\files\build\bootloader && C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe C:/esp/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 H:/git/CAN/sample/claude/files/build/bootloader/bootloader.bin"
+
+Bootloader binary size 0x47f0 bytes. 0x2810 bytes (36%) free.
+
+
+[2/6] No install step for 'bootloader'
+[3/6] Completed 'bootloader'
+[4/6] Linking CXX executable usb_can_slcan.elf
+FAILED: usb_can_slcan.elf 
+C:\Windows\system32\cmd.exe /C "cd . && C:\Espressif\tools\xtensa-esp-elf\esp-15.2.0_20251204\xtensa-esp-elf\bin\xtensa-esp32-elf-g++.exe @"H:/git/CAN/sample/claude/files/build/toolchain/cxxflags" @"H:/git/CAN/sample/claude/files/build/toolchain/ldflags" -Wl,--cref -Wl,--defsym=IDF_TARGET_ESP32=0 -Wl,--Map=H:/git/CAN/sample/claude/files/build/usb_can_slcan.map -Wl,--no-warn-rwx-segments -Wl,--orphan-handling=error -fno-lto -Wl,--gc-sections -Wl,--warn-common -T esp32.peripherals.ld -T esp32.rom.ld -T esp32.rom.api.ld -T esp32.rom.libgcc.ld -T esp32.rom.libc-funcs.ld -T memory.ld -T sections.ld -u include_esp_phy_override -T rom.regi2c.ld @CMakeFiles\usb_can_slcan.elf.rsp -o usb_can_slcan.elf && cd ."
+C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld.exe: esp-idf/freertos/libfreertos.a(app_startup.c.obj):(.literal.main_task+0x10): undefined reference to `app_main'
+C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld.exe: esp-idf/freertos/libfreertos.a(app_startup.c.obj): in function `main_task':
+
+C:/esp/v6.1/esp-idf/components/freertos/app_startup.c:197:(.text.main_task+0x35): undefined reference to `app_main'
+
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+ninja failed with exit code 1, output of the command is in the H:\git\CAN\sample\claude\files\build\log\idf_py_stderr_o
+utput_3300 and H:\git\CAN\sample\claude\files\build\log\idf_py_stdout_output_3300
+Executing action: all (aliases: build)
+Running ninja in directory H:\git\CAN\sample\claude\files\build
+Executing "ninja all"...

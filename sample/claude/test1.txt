@@ -1,0 +1,10 @@
+import serial
+s = serial.Serial()
+s.port = "COM29"
+s.baudrate = 921600
+s.timeout = 1
+s.dtr = False      # 開くときの DTR/RTS を OFF にしてリセットを防ぐ
+s.rts = False
+s.open()
+s.write(b"V\r")
+print(s.read(20))

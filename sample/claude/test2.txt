@@ -1,0 +1,13 @@
+import serial, time
+s = serial.Serial()
+s.port = "COM29"
+s.baudrate = 921600          # 書き込んだ速度に合わせる
+s.timeout = 1
+s.dtr = False
+s.rts = False
+s.open()
+time.sleep(2)
+print("起動後:", s.read(100))
+s.write(b"V\r")
+time.sleep(0.5)
+print("V後:", s.read(100))

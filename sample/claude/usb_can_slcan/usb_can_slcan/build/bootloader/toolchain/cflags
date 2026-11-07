@@ -1,0 +1,6 @@
+"-specs=H:/git/CAN/sample/claude/usb_can_slcan/usb_can_slcan/build/bootloader/specs/picolibc.specs"
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero

@@ -1,0 +1,7 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=H:/git/CAN/sample/claude/usb_can_slcan/usb_can_slcan/build/specs/picolibc.specs"
+-fno-rtti
